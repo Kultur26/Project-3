@@ -12,9 +12,9 @@ public class MarketItemService {
 
     public MarketItemService(MarketplaceItemRepository repo) { this.repo = repo; }
 
-    public List<MarketplaceItem> findAll(String q, String category) {
-        if (q != null && !q.isBlank()) {
-            return repo.findByTitleContainingIgnoreCase(q);
+    public List<MarketplaceItem> findAll(String l, String category) {
+        if (l != null && !l.isBlank()) {
+            return repo.findByTitleContainingIgnoreCase(l);
         }
         if (category != null && !category.isBlank() && !"All".equalsIgnoreCase(category)) {
             return repo.findByCategory(category);
