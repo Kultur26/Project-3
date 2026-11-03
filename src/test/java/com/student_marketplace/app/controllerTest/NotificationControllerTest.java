@@ -13,11 +13,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-/*
- * Uses MockMvc in "standalone" mode: it builds just this controller,
- * without starting the whole app or Spring Security, so the test
- * only checks the controller's own behaviour.
- */
 class NotificationControllerTest {
 
     private MockMvc mockMvc;

@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
 
 public class NotificationFactory {
 
-    // Builds a Notification from every ERD field (e.g. loading existing data)
     public static Notification createNotification(
             Long notificationId,
             Long userId,
@@ -31,10 +30,6 @@ public class NotificationFactory {
     }
 
 
-    // Builds a brand-new notification for a user:
-    // - notificationId is left null (the repository assigns it on save)
-    // - isRead starts as false
-    // - createdAt is set to now
     public static Notification createNewNotification(
             Long userId,
             String type,

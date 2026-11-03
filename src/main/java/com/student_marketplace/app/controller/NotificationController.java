@@ -9,19 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-/*
- * Endpoints (base: /api/notifications)
- *
- *   GET    /                  the current user's notifications, newest first
- *   GET    /unread-count      { "unread": n }
- *   POST   /                  send a notification to a user (userId in the body)
- *   PATCH  /{id}/read         mark one as read
- *   DELETE /{id}              delete one
- *   DELETE /                  delete all of the current user's notifications
- *
- * The current user comes from the X-User-Id header (defaults to 1)
- * until login is added.
- */
 @RestController
 @RequestMapping("/api/notifications")
 public class NotificationController {

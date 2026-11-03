@@ -2,18 +2,6 @@ package com.student_marketplace.app.domain;
 
 import java.time.LocalDateTime;
 
-/*
- * Maps to the Notifications table in the ERD:
- *
- *   notification_id (PK) -> notificationId
- *   user_id (FK)         -> userId
- *   type                 -> type
- *   title                -> title
- *   message              -> message
- *   is_read              -> isRead
- *   link                 -> link
- *   created_at           -> createdAt
- */
 public class Notification {
 
     private Long notificationId;
@@ -33,12 +21,10 @@ public class Notification {
     private LocalDateTime createdAt;
 
 
-    // Default constructor
     public Notification() {
     }
 
 
-    // Constructor
     public Notification(
             Long notificationId,
             Long userId,
@@ -61,7 +47,6 @@ public class Notification {
     }
 
 
-    // Getters and Setters
 
     public Long getNotificationId() {
         return notificationId;
@@ -108,7 +93,6 @@ public class Notification {
     }
 
 
-    // Named getIsRead (not isRead) so the JSON field is "isRead", matching the ERD
     public boolean getIsRead() {
         return isRead;
     }

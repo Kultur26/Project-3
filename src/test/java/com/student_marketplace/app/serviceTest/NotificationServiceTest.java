@@ -18,7 +18,6 @@ class NotificationServiceTest {
     }
 
 
-    // Rule: each user may receive one or more notifications
 
     @Test
     void userCanReceiveOneOrMoreNotifications() {
@@ -48,7 +47,6 @@ class NotificationServiceTest {
     }
 
 
-    // Rule: each user may mark a notification as read
 
     @Test
     void userCanMarkOwnNotificationAsRead() {
@@ -76,7 +74,6 @@ class NotificationServiceTest {
     }
 
 
-    // Rule: each user may delete a notification
 
     @Test
     void userCanDeleteOwnNotification() {

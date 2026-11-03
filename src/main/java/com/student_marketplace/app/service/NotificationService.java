@@ -19,7 +19,6 @@ public class NotificationService {
     }
 
 
-    // Rule: each user may receive one or more notifications
     public Notification sendNotification(
             Long userId,
             String type,
@@ -50,8 +49,6 @@ public class NotificationService {
     }
 
 
-    // Rule: each user may mark a notification as read.
-    // Empty if it doesn't exist OR belongs to another user.
     public Optional<Notification> markAsRead(Long userId, Long notificationId) {
 
         return findOwned(userId, notificationId)
@@ -62,8 +59,6 @@ public class NotificationService {
     }
 
 
-    // Rule: each user may delete a notification (hard delete).
-    // False if it doesn't exist OR belongs to another user.
     public boolean deleteNotification(Long userId, Long notificationId) {
 
         return findOwned(userId, notificationId)
@@ -72,7 +67,6 @@ public class NotificationService {
     }
 
 
-    // Deletes all of one user's notifications ("Clear all")
     public int clearAll(Long userId) {
 
         return notificationRepository.deleteByUserId(userId);

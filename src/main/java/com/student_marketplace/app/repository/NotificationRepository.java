@@ -9,10 +9,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
-/*
- * In-memory store (same approach as ProfileRepository).
- * Data is lost when the app restarts.
- */
 @Repository
 public class NotificationRepository {
 
@@ -35,7 +31,6 @@ public class NotificationRepository {
     }
 
 
-    // All notifications for one user, newest first
     public List<Notification> findByUserId(Long userId) {
 
         return notifications.stream()
@@ -45,8 +40,6 @@ public class NotificationRepository {
     }
 
 
-    // New notification (no id yet) -> assigns the next id.
-    // Existing notification -> replaces the stored one.
     public Notification save(Notification notification) {
 
         if (notification.getNotificationId() == null) {
@@ -67,7 +60,6 @@ public class NotificationRepository {
     }
 
 
-    // Hard delete. Returns false if nothing had that id.
     public boolean deleteById(Long notificationId) {
 
         return notifications.removeIf(
@@ -76,7 +68,6 @@ public class NotificationRepository {
     }
 
 
-    // Deletes every notification for a user. Returns how many were removed.
     public int deleteByUserId(Long userId) {
 
         int before = notifications.size();
